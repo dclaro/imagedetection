@@ -1,12 +1,17 @@
-import streamlit as st
+#import streamlit as st
 #from tensorflow import keras
-import numpy as np
-from PIL import Image
-import cv2
+#import numpy as np
+#from PIL import Image
+#import cv2
 #import imutils
 import os
 import requests
+#from ultralytics import YOLO
+import streamlit as st
+from PIL import Image
 from ultralytics import YOLO
+import numpy as np
+import cv2
 
 model_path = 'https://github.com/dclaro/imagedetection/blob/main/yolo26x.pt'
 #model = keras.models.load_model('yolo26x.pt')
@@ -62,6 +67,7 @@ if model:
                     st.write(f"Coordinates: {box.xywh}")
         except Exception as ex:
             st.error("Error displaying detection results.")
+
 
 
 
