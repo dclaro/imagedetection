@@ -4,8 +4,8 @@ import numpy as np
 from PIL import Image
 import cv2
 #import imutils
-#import os
-#import requests
+import os
+import requests
 from ultralytics import YOLO
 
 model_path = 'https://github.com/dclaro/imagedetection/blob/main/yolo26x.pt'
@@ -62,6 +62,7 @@ if model:
                     st.write(f"Coordinates: {box.xywh}")
         except Exception as ex:
             st.error("Error displaying detection results.")
+
 
 
 
