@@ -4,10 +4,9 @@
 #from PIL import Image
 #import cv2
 #import imutils
+import streamlit as st
 import os
 import requests
-#from ultralytics import YOLO
-import streamlit as st
 from PIL import Image
 from ultralytics import YOLO
 import numpy as np
@@ -67,6 +66,7 @@ if model:
                     st.write(f"Coordinates: {box.xywh}")
         except Exception as ex:
             st.error("Error displaying detection results.")
+
 
 
 
