@@ -13,8 +13,8 @@ from ultralytics import YOLO
 import numpy as np
 import cv2
 
-model_path = 'https://github.com/dclaro/imagedetection/blob/main/yolo26x.pt'
-#model = keras.models.load_model('yolo26x.pt')
+model_path = 'https://github.com/dclaro/imagedetection/blob/main/yolo26n.pt'
+#model = keras.models.load_model('yolo26n.pt')
 
 # Set the title of the application
 st.title("Automatic Image Detection")
@@ -67,6 +67,7 @@ if model:
                     st.write(f"Coordinates: {box.xywh}")
         except Exception as ex:
             st.error("Error displaying detection results.")
+
 
 
 
