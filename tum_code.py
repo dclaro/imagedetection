@@ -7,7 +7,7 @@ import cv2
 import os
 import requests
 
-model_path = 'https://github.com/FernandooMoraes/Article-brain-tumor/blob/main/tumorceb.h5'
+model_path = 'https://github.com/dclaro/imagedetection/blob/main/yolo26x.pt'
 #model = keras.models.load_model('yolo26x.pt')
 
 # Set the title of the application
@@ -61,4 +61,5 @@ if model:
                     st.write(f"Coordinates: {box.xywh}")
         except Exception as ex:
             st.error("Error displaying detection results.")
+
 
