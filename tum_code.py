@@ -7,8 +7,8 @@ import cv2
 import os
 import requests
 
-#model_path = 'https://github.com/FernandooMoraes/Article-brain-tumor/blob/main/tumorceb.h5'
-model = keras.models.load_model('yolo26x.pt')
+model_path = 'https://github.com/FernandooMoraes/Article-brain-tumor/blob/main/tumorceb.h5'
+#model = keras.models.load_model('yolo26x.pt')
 
 # Set the title of the application
 st.title("Automatic Image Detection")
@@ -53,11 +53,12 @@ if model:
         res = model.predict(image_cv, conf=0.5, iou=0.5)
         boxes = res[0].boxes
         res_plotted = res[0].plot()[:, :, ::-1]
-        with col2:
-            st.image(res_plotted, caption='Detected Image', use_container_width=True)
-            try:
-                with st.expander("Detection Results"):
+    with col2:
+        st.image(res_plotted, caption='Detected Image', use_container_width=True)
+        try:
+            with st.expander("Detection Results"):
                 for box in boxes:
                     st.write(f"Coordinates: {box.xywh}")
-                except Exception as ex:
-                    st.error("Error displaying detection results.")
+        except Exception as ex:
+            st.error("Error displaying detection results.")
+
