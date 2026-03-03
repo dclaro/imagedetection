@@ -2,7 +2,3 @@ numpy
 streamlit
 ultralytics
 opencv-python-headless
-scikit-learn
-pillow
-pillow-heif 
-
