@@ -1,9 +1,3 @@
-#import streamlit as st
-#from tensorflow import keras
-#import numpy as np
-#from PIL import Image
-#import cv2
-#import imutils
 import streamlit as st
 import os
 import requests
@@ -21,13 +15,13 @@ st.title("Automatic Image Detection")
 # Application description
 st.markdown("""
 ### Application Description
-This application allows for the automatic detection of tumors in brain radiography images using Convolutional Neural Networks. Users can upload magnetic resonance images, and the application will process and classify these images, indicating the presence of tumors.
+This application allows for the automatic detection of extra-judicial images using Convolutional Neural Networks. Users can upload an images, and the application will process and classify these images, checking the image detected.
 """)
 
 # Model description
 st.markdown("""
 ### Model Description
-The model is based on the VGG16 architecture, which was trained using transfer learning techniques. The dataset used for training contains 253 magnetic resonance images, of which 155 have tumors. The preprocessing of the images included edge cropping and histogram equalization. With these approaches, the model achieved an accuracy of 92.11%, demonstrating its effectiveness in classification.
+The model is based Yolo26n framework, which was trained using transfer learning techniques.
 """)
 
 # Create a file uploader for the user to upload an image
@@ -36,7 +30,7 @@ st.markdown("""
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
 uploaded_image = Image.open(uploaded_file)
-# Adicionando a imagem enviada à página com uma legenda
+# Adicionando a imagem enviada à página 
 with col1:
     st.image(uploaded_image, caption="Uploaded Image", use_container_width=True)
 
@@ -66,6 +60,7 @@ if model:
                     st.write(f"Coordinates: {box.xywh}")
         except Exception as ex:
             st.error("Error displaying detection results.")
+
 
 
 
