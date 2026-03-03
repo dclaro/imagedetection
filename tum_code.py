@@ -2,10 +2,11 @@ import streamlit as st
 import os
 import requests
 from PIL import Image
+from pi_heif import register_heif_opener
 from ultralytics import YOLO
 import numpy as np
 import cv2
-from pi_heif import register_heif_opener
+
 
 model_path = 'https://github.com/dclaro/imagedetection/blob/main/yolo26n.pt'
 #model = keras.models.load_model('yolo26n.pt')
@@ -61,6 +62,7 @@ if model:
                     st.write(f"Coordinates: {box.xywh}")
         except Exception as ex:
             st.error("Error displaying detection results.")
+
 
 
 
