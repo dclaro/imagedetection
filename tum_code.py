@@ -28,7 +28,7 @@ The model is based Yolo26n framework, which was trained using transfer learning 
 # Create a file uploader for the user to upload an image
 st.markdown("""
 ### Upload your image for detection here""")
-uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 uploaded_image = Image.open(uploaded_file)
 # Adicionando a imagem enviada à página 
@@ -61,6 +61,7 @@ if model:
                     st.write(f"Coordinates: {box.xywh}")
         except Exception as ex:
             st.error("Error displaying detection results.")
+
 
 
 
