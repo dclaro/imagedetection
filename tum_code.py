@@ -7,7 +7,8 @@ import cv2
 # ===============================
 # Model path
 # ===============================
-model_path = "yolo26n.pt"
+#model_path = "yolo26n.pt"
+model_path = "https://github.com/dclaro/imagedetection/blob/main/yolo26n.pt"
 
 st.title("Application for identifying notebooks, laptops and similar devices.")
 
@@ -78,6 +79,7 @@ if source_img:
 
 else:
     st.warning("Please upload an image to proceed.")
+
 
 
 
