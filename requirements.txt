@@ -4,6 +4,5 @@ ultralytics
 opencv-python-headless
 scikit-learn
 pillow
-opencv-python
-pi-heif
 pillow-heif 
+
